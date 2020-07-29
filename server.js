@@ -1,6 +1,7 @@
 const express = resequire('express');
 const bodyParser = require('body-parser');
 const bcrypt = require('bcrypt-nodejs')
+const cors = require('cors');
 const knex = require('knex');
 
 const register = require('./controllers/register');
@@ -18,7 +19,7 @@ const db = knex({
 
 const app =express();
 
-app.use(bodyParser.json());
+// app.use(bodyParser.json());
 app.use(cors());
 
 app.get('/', (req,res) => { res.send('it is working') })
